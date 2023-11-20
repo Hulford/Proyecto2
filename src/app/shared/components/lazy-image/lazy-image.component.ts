@@ -21,7 +21,10 @@ public hasLoaded: boolean=false;
   }
 
   onLoad(){
-    console.log('Image loaded')
+    // setTimeout(()=>{
+    //   this.hasLoaded=true;
+    // }, 1000)
     this.hasLoaded=true;
+
   }
 }
