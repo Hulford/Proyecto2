@@ -1,13 +1,15 @@
-<div class="bg-dark">
+<div class="bg-dark text-center">
   <!-- Crear imagen -->
-<img
+
+<shared-lazy-image></shared-lazy-image>
+<!-- <img
 [src]="gif.images.downsized_medium.url"
  [alt]="gif.title"
- class="card-img-top">
+ class="card-img-top"> -->
 
 <div class="card-body text-white">
 <p class="Cart-text">
-{{gif.title}}
+{{gif.title || 'No title'}}
 </p>
 
 </div>
