@@ -8,11 +8,22 @@ export class GifsService {
 get tagHistory(){
   return [...this._tagsHistory];
 }
+private organizeHistori(tag: string){
+  tag = tag.toLowerCase();
 
+if(this._tagsHistory.includes(tag)){
+  this._tagsHistory = this._tagsHistory.filter((oldTag)=> oldTag !== tag)
+
+}
+this._tagsHistory.unshift(tag);
+this._tagsHistory = this._tagsHistory.splice(0,10);
+}
 
 serachTag(tag: string):void{
-this._tagsHistory.unshift(tag);
+if (tag.length === 0 ) return;
 
-console.log(this.tagHistory)
+this.organizeHistori(tag);
+
+//console.log(this.tagHistory)
 }
 }
